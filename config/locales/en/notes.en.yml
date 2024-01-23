@@ -1,0 +1,102 @@
+en:
+  notes: &notes
+    label: &label Notes
+    breadcrumbs:
+      label: *label
+    navigation:
+      label: *label
+      icon: ti ti-notepad
+    buttons: &buttons
+      new: Add New Note
+      create: Create Note
+      edit: Edit Note
+      update: Update Note
+      destroy: Remove Note
+      shorthand:
+        edit: Edit
+        destroy: Delete
+      confirmations:
+        # TODO customize for your use-case.
+        destroy: Are you sure you want to remove %{note_name}? This will also remove any child resources and can't be undone.
+    note:
+      buttons: *buttons
+    fields: &fields
+      id:
+        heading: Note ID
+      team_id:
+        heading: Team ID
+      creator_id: &creator
+        _: &creator_id Creator
+        label: *creator_id
+        heading: *creator_id
+        placeholder: Select
+      creator: *creator
+      title:
+        _: &title Title
+        label: *title
+        heading: *title
+      body:
+        _: &body Body
+        label: *body
+        heading: *body
+      # 🚅 super scaffolding will insert new fields above this line.
+      created_at:
+        _: &created_at Added
+        label: *created_at
+        heading: *created_at
+      updated_at:
+        _: &updated_at Updated
+        label: *updated_at
+        heading: *updated_at
+    api:
+      collection_actions: "Collection Actions for Notes"
+      index: "List Notes"
+      create: "Add a New Note"
+      member_actions: "Actions for an Individual Note"
+      show: "Retrieve a Note"
+      update: "Update a Note"
+      destroy: "Delete a Note"
+      fields: *fields
+    index:
+      section: "%{teams_possessive} Notes"
+      contexts:
+        team:
+          header: Notes
+          description: Below is a list of Notes that have been added for %{team_name}.
+          description_empty: No Notes have been added for %{team_name}.
+      fields: *fields
+      buttons: *buttons
+    show:
+      section: "%{note_name}"
+      header: Note Details
+      description: Below are the details we have for %{note_name}.
+      manage_description: You'll also find options for updating these details or removing %{note_name} from %{team_name} entirely.
+      fields: *fields
+      buttons: *buttons
+    form: &form
+      buttons: *buttons
+      fields: *fields
+    new:
+      section: "New Note for %{team_name}"
+      header: New Note Details
+      description: Please provide the details of the new Note you'd like to add to %{team_name}.
+      form: *form
+    edit:
+      section: "%{note_name}"
+      header: Edit Note Details
+      description: You can update the details or settings for %{note_name} below.
+      form: *form
+    notifications:
+      created: Note was successfully created.
+      updated: Note was successfully updated.
+      destroyed: Note was successfully destroyed.
+  account:
+    notes: *notes
+  activerecord:
+    attributes:
+      note:
+        title: *title
+        body: *body
+        # 🚅 super scaffolding will insert new activerecord attributes above this line.
+        created_at: *created_at
+        updated_at: *updated_at
