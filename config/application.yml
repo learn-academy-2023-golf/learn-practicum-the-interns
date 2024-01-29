@@ -1,0 +1,4 @@
+BASE_URL: http://localhost:3000
+MARKETING_SITE_URL: /account
+HIDE_THINGS: true
+# STRIPE_SECRET_KEY: ...

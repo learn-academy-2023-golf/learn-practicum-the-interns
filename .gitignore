@@ -51,7 +51,7 @@ Untitled
 .DS_Store
 
 # Ignore application configuration
-/config/application.yml
+# /config/application.yml
 
 # Ignore IDE specific folders
 .idea/
