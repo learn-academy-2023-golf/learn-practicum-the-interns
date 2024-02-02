@@ -1,0 +1,4 @@
+<%= form_tag([:account, context, :notes], method: :get, class: 'search-form') do %>
+    <%= text_field_tag :query, params[:query], placeholder: t('.search_placeholder') %>
+    <%= submit_tag t('.search_button'), class: 'button new' %>
+  <% end %>

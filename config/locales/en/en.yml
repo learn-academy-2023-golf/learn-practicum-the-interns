@@ -1,1 +1,5 @@
 en:
+  shared:
+    search_form:
+      search_placeholder: "search"
+      search_button: "search"
