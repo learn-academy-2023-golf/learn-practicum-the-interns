@@ -10,21 +10,25 @@
 
 <%= action_model_select_controller do %>
   <% cable_ready_updates_for context, collection do %>
+    <%= render 'shared/search_form', collection: notes, pagy: pagy, context: context %>
     <%= render 'account/shared/box', pagy: pagy do |box| %>
+
       <% box.title t(".contexts.#{context.class.name.underscore}.header") %>
+       
       <% box.description do %>
+
         <%= t(".contexts.#{context.class.name.underscore}.description#{"_empty" unless notes.any?}") %>
         <%= render "shared/limits/index", model: notes.model %>
-      <% end %>
-
-      <% box.table do %>
-        <% if notes.any? %>
+        <% end %>
+        
+        <% box.table do %>
+          <% if notes.any? %>
           <table class="table">
-            <thead>
-              <tr>
-                <%= render "shared/tables/select_all" %>
-                <th><%= t('.fields.creator.heading') %></th>
-                <th><%= t('.fields.title.heading') %></th>
+          <thead>
+          <tr>
+          <%= render "shared/tables/select_all" %>
+          <th><%= t('.fields.creator.heading') %></th>
+          <th><%= t('.fields.title.heading') %></th>
                 <%# 🚅 super scaffolding will insert new field headers above this line. %>
                 <th><%= t('.fields.created_at.heading') %></th>
                 <th class="text-right"></th>

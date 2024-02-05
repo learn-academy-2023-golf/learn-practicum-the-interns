@@ -1,4 +1,13 @@
 class Note < ApplicationRecord
+  include PgSearch::Model
+  pg_search_scope :search_full_text, against: {
+                                       title: "A",
+                                       body: "B",
+                                     },
+    associated_against: {
+      rich_text_body: ["body"]
+    }
+
   # 🚅 add concerns above.
 
   # 🚅 add attribute accessors above.

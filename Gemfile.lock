@@ -459,6 +459,9 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.5.4)
+    pg_search (2.3.6)
+      activerecord (>= 5.2)
+      activesupport (>= 5.2)
     phonelib (0.8.7)
     possessive (1.0.1)
     postmark (1.25.0)
@@ -746,6 +749,7 @@ DEPENDENCIES
   minitest-reporters
   minitest-retry
   pg (>= 0.18, < 2.0)
+  pg_search
   postmark-rails
   pry
   puma (~> 6.0)
